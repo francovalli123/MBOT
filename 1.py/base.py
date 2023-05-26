@@ -178,4 +178,5 @@ class MBOT:
             return f"Ahora {self.name} debes comprometerte a seguir estos consejos para salir de esta situación. Valdrá la pena. Igualmente te recomiendo contactar a un profesional humano."
         else:
             return f"Entonces no tienes estos problemas, ¡felicidades {self.name}!"
-        
+    
+    
