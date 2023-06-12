@@ -3,21 +3,41 @@
 from base import *
 import time
 
+def escribir_letra_por_letra(texto):
+    for letra in texto:
+        print(letra, end='', flush=True)
+        time.sleep(0.04)
+    print()
+
+
+def deletrear_input(texto, nueva_linea=True):
+    for letra in texto:
+        print(letra, end='', flush=True)
+        time.sleep(0.04)
+    if nueva_linea:
+        print()
+
+
 time.sleep(0.5)
-print("Bienvenido a MBOT")
+escribir_letra_por_letra("Bienvenido a MBOT.")
 time.sleep(0.5)
 
+
 try:
-    nickname = input("Introduzca su nombre de usuario: ")
+    solicitud_nickname = "Introduzca su nombre: "
+    deletrear_input(solicitud_nickname, nueva_linea=False)
+    nickname = input("")
     time.sleep(0.2)
-    age = int(input("Introduzca su edad: "))
+    solicitud_edad = "Introduzca su edad: "
+    deletrear_input(solicitud_edad, nueva_linea=False)
+    age = int(input(""))
     time.sleep(0.5)
     if len(nickname) == 0:
-        print("Introduzca un nombre de usuario válido.")
+        escribir_letra_por_letra("Introduzca un nombre de usuario válido.")
         exit()
 
 except ValueError:
-    print("Introduzca una edad válida...")
+    escribir_letra_por_letra("Introduzca una edad válida...")
     exit()
 
 
@@ -25,7 +45,7 @@ user = MBOT(nickname, age)
 print(user.saludo())
 
 def menu():
-    print(f"""{nickname}, ¿En que puedo ayudarte?
+    escribir_letra_por_letra(f"""{nickname}, ¿En que puedo ayudarte?
                   1- Hablar sobre mi estado actual.
                   2- Consultar que me está pasando.
                   3- Hablar de problemas de autoestima y confianza.
@@ -33,7 +53,9 @@ def menu():
     
     time.sleep(0.3)
 
-    respuesta = int(input("Eliga la opción deseada: "))
+    solicitud_respuesta_menu = "Eliga la opción deseada: "
+    deletrear_input(solicitud_respuesta_menu, nueva_linea=False)
+    respuesta = int(input(""))
 
     if respuesta == 1:
         print(user.pregunta_1())
@@ -47,26 +69,30 @@ def menu():
 
 
 def volver():
-    print("""Que desea hacer?
+    escribir_letra_por_letra("""Que desea hacer?
             1- Salir.
             2- Volver al menú.
             """)
     
     time.sleep(0.3)
 
-    rta = int(input("Respuesta: "))
+    solicitud_respuesta_volver = "Respuesta: "
+    deletrear_input(solicitud_respuesta_volver, nueva_linea=False)
+    rta = int(input(""))
 
     time.sleep(0.3)
     if rta == 1:
-        print("Saliendo...")
+        escribir_letra_por_letra("Saliendo...")
         time.sleep(0.2)
         exit()
     elif rta == 2:
         menu()
     else:
-        return f"{nickname}, introduzca '1' para salir del sistema o '2' para volver al menú"
+        escribir_letra_por_letra(f"{nickname}, introduzca '1' para salir del sistema o '2' para volver al menú")
+        return ""
         
 print(menu())
+
 
 
 

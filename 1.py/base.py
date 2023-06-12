@@ -1,102 +1,147 @@
 #MBOT
 import time
 
+def escribir_letra_por_letra(texto):
+    for letra in texto:
+        print(letra, end='', flush=True)
+        time.sleep(0.04)
+    print()
+
+
+def deletrear_input(texto, nueva_linea=True):
+    for letra in texto:
+        print(letra, end='', flush=True)
+        time.sleep(0.04)
+    if nueva_linea:
+        print()
+
 class MBOT:
     def __init__(self, name, age ):
         self.name = name
         self.age = age
+
     
     def __str__(self):
-        return f"Tu nombre es {self.name} y tenes {self.age} años."
+        escribir_letra_por_letra(f"Tu nombre es {self.name} y tenes {self.age} años.")
+        return ""
     
     def saludo(self):
-        return  f"\n¡Hola {self.name}! Mi nombre es MBOT y estoy aca para ayudarte.\n"
+        escribir_letra_por_letra(f"\n¡Hola {self.name}! Mi nombre es MBOT y estoy aca para ayudarte.\n")
+        return ""
+    
         
     def pregunta_1(self):
-        print(f"Contame {self.name}, ¿Como estuvo tu día?\n")
+        escribir_letra_por_letra(f"Contame {self.name}, ¿Como estuvo tu día?\n")
         time.sleep(0.2)
-        print("""Selecciona tu respuesta:
+        escribir_letra_por_letra("""Selecciona tu respuesta:
                  1- Bien.
                  2- Mas o menos.
                  3- Mal.        
             """)
         time.sleep(0.1)
-        day_info =int(input("Respuesta: "))
+        solicitud_respuesta_p1_1 = "Respuesta: "
+        deletrear_input(solicitud_respuesta_p1_1, nueva_linea=False)
+        day_info = int(input(""))
         if day_info == 1:
             time.sleep(0.2)
-            print(f"\nMe alegro de oír eso {self.name}. ¿Que te ha gustado de tu día?\n")
+            escribir_letra_por_letra(f"\nMe alegro de oír eso {self.name}. ¿Que te ha gustado de tu día?\n")
             time.sleep(0.3)
-            day_info_2 = input("Respuesta: ")
+            solicitud_respuesta_p1_2 = "Respuesta: "
+            deletrear_input(solicitud_respuesta_p1_2, nueva_linea=False)
+            day_info_2 = input("")
             time.sleep(0.2)
             if len(day_info_2) == 0:
-                return "Por favor, introduzca una respuesta."
+                escribir_letra_por_letra("Por favor, introduzca una respuesta.")
+                return ""
             else:
-                return f"\n¡Que bueno {self.name}! Recuerda que la clave para superar momentos dificiles es poder ver las solo las cosas buenas de cada día.\n"
+                escribir_letra_por_letra(f"\n¡Que bueno {self.name}! Recuerda que la clave para superar momentos dificiles es poder ver las solo las cosas buenas de cada día.\n")
+                return ""
+            
         elif day_info == 2:
             time.sleep(0.2)
-            print(f"Lamento eso {self.name}, ¿Que te ha disgustado?\n")
+            escribir_letra_por_letra(f"Lamento eso {self.name}, ¿Que te ha disgustado?\n")
             time.sleep(0.3)
-            day_info_3 = input("Respuesta: ")
+            solicitud_respuesta_p1_3 ="Respuesta: "
+            deletrear_input(solicitud_respuesta_p1_3, nueva_linea=False)
+            day_info_3 = input("")
             time.sleep(0.2)
             if len(day_info_3) == 0:
-                return "Por favor, introduzca una respuesta."
+                escribir_letra_por_letra("Por favor, introduzca una respuesta.")
+                return ""
             else:
-                print("\n¿Y que pensas acerca de eso?\n")
+                escribir_letra_por_letra("\n¿Y que pensas acerca de eso?\n")
                 time.sleep(0.3)
-                reply_day_info_3 = input("Respuesta: ")
+                solicitud_respuesta_p1_4 = "Respuesta: "
+                deletrear_input(solicitud_respuesta_p1_4, nueva_linea=False)
+                reply_day_info_3 = input("")
                 time.sleep(0.2)
                 if len(reply_day_info_3) == 0:
-                    return "Por favor, introduzca una respuesta."
+                    escribir_letra_por_letra("Por favor, introduzca una respuesta.")
+                    return ""
                 else:
-                    return f"\nPensá en las cosas buenas que pasaron hoy {self.name}, no siempre todo va a salir como lo previsto. Mañana será un nuevo día y debes superar esas cosas que pasaron hoy para mejorar lo de hoy.\n"
+                    escribir_letra_por_letra(f"\nPensá en las cosas buenas que pasaron hoy {self.name}, no siempre todo va a salir como lo previsto. Mañana será un nuevo día y debes superar esas cosas que pasaron hoy para mejorar lo de hoy.\n")
+                    return ""
         elif day_info ==  3:
             time.sleep(0.2)
-            print(f"\nLamento mucho eso {self.name}, te daré tu espacio para que puedas desahogarte.\n")
+            escribir_letra_por_letra(f"\nLamento mucho eso {self.name}, te daré tu espacio para que puedas desahogarte.\n")
             time.sleep(0.3)
-            day_info_4 = input("Cuentame todo: ")
+            solicitud_respuesta_p1_5 = "Cuentame todo: "
+            deletrear_input(solicitud_respuesta_p1_5, nueva_linea=False)
+            day_info_4 = input("")
             if len(day_info_4) == 0:
-                return "Por favor, introduzca una respuesta."
+                escribir_letra_por_letra("Por favor, introduzca una respuesta.")
+                return ""
             else:
                 time.sleep(0.2)
-                print(f"\nLa vida es así {self.name}, ¿Cómo te sentís en este momento acerca de lo ocurrido?\n ")
+                escribir_letra_por_letra(f"\nLa vida es así {self.name}, ¿Cómo te sentís en este momento acerca de lo ocurrido?\n ")
                 time.sleep(0.3)
-                reply_day_info_4 = input("Respuesta: ")
+                solicitud_respuesta_p1_6 = "Respuesta: "
+                deletrear_input(solicitud_respuesta_p1_6, nueva_linea=False)
+                reply_day_info_4 = input("")
                 if len(reply_day_info_4) == 0:
-                    return f"Por favor {self.name}, estoy acá para ayudarte. Podés contarme."
+                    escribir_letra_por_letra(f"Por favor {self.name}, estoy acá para ayudarte. Podés contarme.")
+                    return ""
                 else:
                     if self.age >= 11 and self.age <= 20:
-                        print(f"\n{self.name}, estás pasando por una etapa de tu vida donde es normal sentirse mal y no decirle a nadie. No te preocupes, estoy acá para ayudarte.\n")
+                        escribir_letra_por_letra(f"\n{self.name}, estás pasando por una etapa de tu vida donde es normal sentirse mal y no decirle a nadie. No te preocupes, estoy acá para ayudarte.\n")
                     else:
-                        print(f"\n{self.name} recordá que a veces la vida puede ser dificíl y aunque sea un simple bot, el sentido de mi vida es ayudarte. A continuación te voy a hacer un par de preguntas.\n")
+                        escribir_letra_por_letra(f"\n{self.name} recordá que a veces la vida puede ser dificíl y aunque sea un simple bot, el sentido de mi vida es ayudarte. A continuación te voy a hacer un par de preguntas.\n")
                     time.sleep(0.2)
-                    print("""¿Puedes hacer algo para mejorar lo que pasó?
+                    escribir_letra_por_letra("""¿Puedes hacer algo para mejorar lo que pasó?
                              1- Si
                              2- No\n""")
                     time.sleep(0.3)
-                    r_1_1 = int(input("Respuesta: "))
+                    solicitud_respuesta_p1_7 = "Respuesta: "
+                    r_1_1 = int(input(""))
                     if r_1_1 == 1:
-                        print (f"""\nEntonces no te pongas mal, el problema eventualmente será resuelto. Pensá en que a veces nos preocupamos demasiado por cosas que no valen tanto la pena.\nY siempre va a haber gente para escucharte, e incluso si no lo hay, acá estoy yo.\nMañana va a ser un nuevo día, y aunque parezca no significar nada, serán 24 horas mas para poder resolver tus problemas y sentirte mucho mejor.\nEs normal tener un día malo, incluso pueden ser meses o años, pero nunca hay que bajar los brazos sobre todo sabiendo que tiene solución.\nSomos los protagonistas de nuestra propia vida, y nadie va a venir a jugar ese papel por nosotros, no bajes los brazos.\n
+                        escribir_letra_por_letra (f"""\nEntonces no te pongas mal, el problema eventualmente será resuelto. Pensá en que a veces nos preocupamos demasiado por cosas que no valen tanto la pena.\nY siempre va a haber gente para escucharte, e incluso si no lo hay, acá estoy yo.\nMañana va a ser un nuevo día, y aunque parezca no significar nada, serán 24 horas mas para poder resolver tus problemas y sentirte mucho mejor.\nEs normal tener un día malo, incluso pueden ser meses o años, pero nunca hay que bajar los brazos sobre todo sabiendo que tiene solución.\nSomos los protagonistas de nuestra propia vida, y nadie va a venir a jugar ese papel por nosotros, no bajes los brazos.\n
                         """)
                         time.sleep(0.2)
-                        print("¿Que puedes hacer al respecto?")
+                        escribir_letra_por_letra("¿Que puedes hacer al respecto?")
                         time.sleep(0.3)
-                        r_1_1_2 = input("Respuesta: ")
+                        solicitud_respuesta_p1_8 = "Respuesta: "
+                        deletrear_input(solicitud_respuesta_p1_8, nueva_linea=False)
+                        r_1_1_2 = input("")
                         if len(r_1_1_2) == 0:
-                            print("Necesito que pienses en algo para poder ayudarte.")
+                            escribir_letra_por_letra("Necesito que pienses en algo para poder ayudarte.")
                         else:
-                            return f"Ahora ya sabes que tenés que hacer {self.name}, incluso si fallas, intentalo una y otra vez hasta que puedas solucionarlo.\n"
+                            escribir_letra_por_letra(f"Ahora ya sabes que tenés que hacer {self.name}, incluso si fallas, intentalo una y otra vez hasta que puedas solucionarlo.\n")
+                            return ""
 
                     elif r_1_1 == 2:
-                        return f"""Entonces no deberías preocuparte por algo sin solución. Buscá cosas que te hagan sentir bien y olvidarte de lo que está pasando.\nRecuerda que sobrepensando tanto algo vas a crear problemas que ni siquiera existen y te sentirás peor.\nPiensa en como mejorar tu vida y dejar de lado todo eso que te hace mal, y si es como en este caso en el que no puedes encontrar una solución al problema, deja de preocuparte tanto y recuerda que no estas solo. Siempre va a haber alguien para acompañarte y escucharte.\n"""
+                        escribir_letra_por_letra(f"""Entonces no deberías preocuparte por algo sin solución. Buscá cosas que te hagan sentir bien y olvidarte de lo que está pasando.\nRecuerda que sobrepensando tanto algo vas a crear problemas que ni siquiera existen y te sentirás peor.\nPiensa en como mejorar tu vida y dejar de lado todo eso que te hace mal, y si es como en este caso en el que no puedes encontrar una solución al problema, deja de preocuparte tanto y recuerda que no estas solo. Siempre va a haber alguien para acompañarte y escucharte.\n""")
+                        return ""
                     else: 
-                        return f"{self.name}, elige una opción válida."
+                        escribir_letra_por_letra(f"{self.name}, elige una opción válida.")
+                        return ""
         else:
-            return f"{self.name}, elige una opción válida."
+            escribir_letra_por_letra(f"{self.name}, elige una opción válida.")
+            return ""
 
     def pregunta_2(self):
-        print("Has elegido la opción para saber que puedes estar sufriendo (Elige solo 6).")
+        escribir_letra_por_letra("Has elegido la opción para saber que puedes estar sufriendo (Elige solo 6).")
         time.sleep(0.5)
-        print(""" ¿Cuales de los siguientes sintomas padeces?\n 
+        escribir_letra_por_letra(""" ¿Cuales de los siguientes sintomas padeces?\n 
                   
                   1- Sensación de nerviosismo, agitación o tensión.\n
                   2- Sensación de peligro inminente, pánico o catástrofe.\n
@@ -114,35 +159,47 @@ class MBOT:
         respuesta_2_1 = []
         time.sleep(0.5)
         while len(respuesta_2_1) < 6:
-            respuesta = int(input("Introduzca la opción deseada: "))
+            solicitud_respuesta_p2 = "Introduzca la opción deseada: "
+            deletrear_input(solicitud_respuesta_p2, nueva_linea=False)
+            respuesta = int(input(""))
             respuesta_2_1.append(respuesta)
 
-            salir = input("¿Ha terminado de elegir? S/N: ").upper()
+            solicitud_respuesta_p2_salir = "¿Ha terminado de elegir? S/N: "
+            deletrear_input(solicitud_respuesta_p2_salir, nueva_linea=False)
+            salir = input("").upper()
             if salir == "S":
                 break
             elif salir == "N":
                 continue
             else:
-                print("Por favor, ingresa un 'S' si ha terminado de elegir opciones y una 'N' si desea continuar.")
+                escribir_letra_por_letra("Por favor, ingresa un 'S' si ha terminado de elegir opciones y una 'N' si desea continuar.")
 
         time.sleep(0.5)
 
         if respuesta_2_1.count(1) + respuesta_2_1.count(2) + respuesta_2_1.count(3) + respuesta_2_1.count(4) >= 3:
-            return "De acuerdo con las opciones elegidas, lamento informarte que padeces de Ansiedad, te recomiendo buscar ayuda profesional para una solución más efectiva.\nNo obstante, yo puedo ayudarte un poco."
+            escribir_letra_por_letra("De acuerdo con las opciones elegidas, lamento informarte que padeces de Ansiedad, te recomiendo buscar ayuda profesional para una solución más efectiva.\nNo obstante, yo puedo ayudarte un poco.")
+            return ""
         elif respuesta_2_1.count(5) + respuesta_2_1.count(6) + respuesta_2_1.count(7) + respuesta_2_1.count(8) >= 3:
-            return "De acuerdo con las opciones elegidas, lamento informarte que padeces de Depresión, te recomiendo buscar ayuda profesional para una solución más efectiva.\nNo obstante, yo puedo ayudarte un poco."
+            escribir_letra_por_letra("De acuerdo con las opciones elegidas, lamento informarte que padeces de Depresión, te recomiendo buscar ayuda profesional para una solución más efectiva.\nNo obstante, yo puedo ayudarte un poco.")
+            return ""
         elif respuesta_2_1.count(9) + respuesta_2_1.count(10) + respuesta_2_1.count(11) + respuesta_2_1.count(12) >= 3:
-            return "De acuerdo con las opciones elegidas, lamento informarte que padeces de Transtorno Obsesivo Compulsivo(TOC), te recomiendo buscar ayuda profesional para una solución más efectiva.\nNo obstante, yo puedo ayudarte un poco."
+            escribir_letra_por_letra("De acuerdo con las opciones elegidas, lamento informarte que padeces de Transtorno Obsesivo Compulsivo(TOC), te recomiendo buscar ayuda profesional para una solución más efectiva.\nNo obstante, yo puedo ayudarte un poco.")
+            return ""
         else:
-            print(f"Lamento informarte que mi base de datos no pudo identificar el transtorno. ¿Puede ser que no hayas encontrado alguna opción que se adapte a tu situación?\n")
+            escribir_letra_por_letra(f"Lamento informarte que mi base de datos no pudo identificar el transtorno. ¿Puede ser que no hayas encontrado alguna opción que se adapte a tu situación?\n")
             time.sleep(0.2)
-            r_2_2 = input("S/N: \n").casefold()
+            solicitud_respuesta_p2_2 = "S/N: "
+            deletrear_input(solicitud_respuesta_p2_2, nueva_linea=False)
+            r_2_2 = input("\n").casefold()
             if r_2_2 == "N":
-                return "Lo lamento, aún estoy en desarrollo.\n"
+                escribir_letra_por_letra("Lo lamento, aún estoy en desarrollo.\n")
+                return ""
             elif r_2_2 == "S":
-                return "Entonces, vuelve a intentarlo.\n"
+                escribir_letra_por_letra("Entonces, vuelve a intentarlo.\n")
+                return ""
             else:
-                return "Por favor, proporcione una respuesta válida.\n"
+                escribir_letra_por_letra("Por favor, proporcione una respuesta válida.\n")
+                return
             
     def pregunta_3(self):
         print("Has elegido la opción para hablar de problemas de confianza y autoestima.\n")
